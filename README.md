@@ -1,6 +1,6 @@
 ## Requirements
 - Node v20.2.0
-- NPM v9.6.6
+- Yarn 1.22.19 or NPM v9.6.6
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
