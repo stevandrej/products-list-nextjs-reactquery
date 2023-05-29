@@ -13,7 +13,6 @@ export default async function PopularMovies() {
 		<Hydrate state={dehydratedState}>
 			<h1>Popular movies</h1>
 			<ListMovies />
-			<div onClick={() => alert("clicked")}>Click me!</div>
 		</Hydrate>
 	);
 }
