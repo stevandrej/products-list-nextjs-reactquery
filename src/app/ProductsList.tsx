@@ -1,13 +1,20 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { getProductsLimited } from "./services/useGetProductsLimited";
 import Card from "src/components/molecules/Card";
+import { getAllProducts } from "./services/useGetAllProducts";
+
+const TOTAL_PRODUCTS = 12;
 
 export default function ProductsList() {
-	const { data, isLoading, isFetching, error } = useQuery({
-		queryKey: ["products-limited"],
-		queryFn: () => getProductsLimited(),
+	const {
+		data: products,
+		isLoading,
+		isFetching,
+		error,
+	} = useQuery({
+		queryKey: ["products"],
+		queryFn: () => getAllProducts(TOTAL_PRODUCTS),
 	});
 
 	return (
@@ -16,13 +23,18 @@ export default function ProductsList() {
 				<p>Oh no, there was an error</p>
 			) : isLoading || isFetching ? (
 				<p>Loading...</p>
-			) : data ? (
-				data.map((item: any) => (
+			) : products ? (
+				products.map((item) => (
 					<Card
 						key={item.id}
 						description={item.description}
 						image={item.image}
 						title={item.title}
+						actionText="Buy Now"
+						action={() => {
+							return;
+						}}
+						truncate
 					/>
 				))
 			) : null}
