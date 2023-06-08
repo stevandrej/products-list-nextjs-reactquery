@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import Card from "src/components/molecules/Card";
 import { getAllProducts } from "./services/useGetAllProducts";
+import Spinner from "src/components/atoms/Spinner";
 
 const TOTAL_PRODUCTS = 12;
 
@@ -22,7 +23,9 @@ export default function ProductsList() {
 			{error ? (
 				<p>Oh no, there was an error</p>
 			) : isLoading || isFetching ? (
-				<p>Loading...</p>
+				<div className="flex justify-center">
+					<Spinner />
+				</div>
 			) : products ? (
 				products.map((item) => (
 					<Card
