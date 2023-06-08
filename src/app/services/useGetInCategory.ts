@@ -1,9 +1,10 @@
+import { Product } from "@/types/Product";
 import { useQuery } from "@tanstack/react-query";
 import httpClient from "src/config/httpClient";
 
 export async function getInCategory(category: string) {
 	const res = await httpClient(`/products/category/${category}`);
-	const data = await res.data;
+	const data = (await res.data) as Product[];
 	return data;
 }
 
