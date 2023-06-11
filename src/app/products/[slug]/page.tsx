@@ -1,8 +1,9 @@
 import { getAllProducts } from "@/services/useGetAllProducts";
 import { getSingleProduct } from "@/services/useGetSingleProduct";
 import getQueryClient from "@/utils/getQueryClient";
-import { Hydrate, dehydrate } from "@tanstack/react-query";
+import { dehydrate } from "@tanstack/react-query";
 import SingleProduct from "./SingleProduct";
+import Hydrate from "@/utils/hydrate.client";
 
 export default async function Product({
 	params,

@@ -6,9 +6,7 @@ import { getAllProducts } from "./services/useGetAllProducts";
 
 export default async function Home() {
 	const queryClient = getQueryClient();
-	await queryClient.prefetchQuery(["products"], () =>
-		getAllProducts()
-	);
+	await queryClient.prefetchQuery(["products"], () => getAllProducts());
 	const dehydratedState = dehydrate(queryClient);
 
 	return (

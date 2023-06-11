@@ -1,8 +1,9 @@
 import { getCategories } from "@/services/useGetCategories";
 import { getInCategory } from "@/services/useGetInCategory";
 import getQueryClient from "@/utils/getQueryClient";
-import { Hydrate, dehydrate } from "@tanstack/react-query";
+import { dehydrate } from "@tanstack/react-query";
 import ProductsList from "./ProductsList";
+import Hydrate from "@/utils/hydrate.client";
 
 export default async function Category({
 	params,
@@ -11,6 +12,7 @@ export default async function Category({
 }) {
 	const slug = params.slug;
 	const queryClient = getQueryClient();
+
 	await queryClient.prefetchQuery(["category", slug], () =>
 		getInCategory(slug)
 	);
