@@ -16,7 +16,6 @@ export default async function Category({
 	);
 
 	const dehydratedState = dehydrate(queryClient);
-	console.log("Categories: ");
 
 	return (
 		<Hydrate state={dehydratedState}>
