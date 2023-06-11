@@ -30,6 +30,9 @@ export default function Navbar() {
 						tabIndex={0}
 						className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 					>
+						<li>
+							<Link href={"/"}>All</Link>
+						</li>
 						{data?.map((item) => (
 							<li key={item} className="capitalize">
 								<Link href={`/category/${item}`}>{item}</Link>
@@ -43,6 +46,9 @@ export default function Navbar() {
 			</div>
 			<div className="navbar-center hidden lg:flex">
 				<ul className="menu menu-horizontal px-1">
+					<li>
+						<Link href={"/"}>All</Link>
+					</li>
 					{data?.map((item) => (
 						<li key={item} className="capitalize">
 							<Link href={`/category/${item}`}>{item}</Link>

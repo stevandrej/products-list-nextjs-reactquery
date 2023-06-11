@@ -33,10 +33,8 @@ export default function ProductsList() {
 						description={item.description}
 						image={item.image}
 						title={item.title}
-						actionText="Buy Now"
-						action={() => {
-							return;
-						}}
+						linkToText="View"
+						linkTo={item.id.toString()}
 						truncate
 					/>
 				))

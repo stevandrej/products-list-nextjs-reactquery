@@ -20,7 +20,7 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<Provider>
 					<Navbar />
-					<div className="container mx-auto py-12 max-w-6xl">
+					<div className="container mx-auto py-12 max-w-6xl min-h-[calc(100vh-70px)]">
 						{children}
 					</div>
 				</Provider>
